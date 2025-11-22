@@ -1,6 +1,7 @@
 ; ================================
 ; AFK script in autohotkey
 ; pretty neat i use this alot in roblox
+; you may want to be in full screen
 ; ================================
 
 StartKey := "RShift"          ; this doesnt change the start Key this is just a visual var
@@ -41,7 +42,7 @@ AfkLoop:
         SetTimer, AfkLoop, Off
         return
     }
-
+    ; this would be the best for siimple afks
     if (AfkType = "click") {
         Click, %MouseButton%
         Sleep, %ClickInterval%
@@ -63,8 +64,13 @@ AfkLoop:
         if (MouseMode = "clickndrag") {
             MouseClickDrag, %MouseButton%, x, y, x+MouseRadius, y, 10
         }
+        else if (MouseMode = "ldrag") {
+            ; you may want to be in full screen
+            MouseClickDrag, %MouseButton%, x, y, x+MouseRadius, y, 5
+        }
         else if (MouseMode = "ddrag") {
-            ; Double drag: drag twice in opposite directions
+            ; double drag but faster than ldrag
+            ; you may want to be in full screen
             MouseClickDrag, %MouseButton%, x, y, x+MouseRadius, y, 10
             Sleep, 200
             MouseClickDrag, %MouseButton%, x, y, x-MouseRadius, y, 10
