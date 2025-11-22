@@ -1,0 +1,2 @@
+# ALOT OF RANDOM STUFF I CODED THAT I DONT THINK NEEDS A REPOSITORY
+Some of the scripts can be old
