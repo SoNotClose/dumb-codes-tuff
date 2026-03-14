@@ -160,7 +160,6 @@ function SilentAim.Load(Settings)
         return oldNamecall(...)
     end))
 
-    print("[SilentAim] Loaded")
 end
 
 function SilentAim.Unload()
