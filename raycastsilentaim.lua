@@ -93,7 +93,8 @@ local function getClosestPlayer()
         if not OnScreen then continue end
 
         local Distance = (getMousePosition() - ScreenPosition).Magnitude
-        if Distance <= (DistanceToMouse or Settings.FOVSize or 2000) then
+        if not Settings.IgnoreFOV and Distance > (Settings.FOVSize or 2000) then continue end
+            if Distance <= (DistanceToMouse or Settings.FOVSize or 2000) then
             if Settings.TargetPart["Head"] and Settings.TargetPart["HumanoidRootPart"] then
                 if Settings.TargetMode == "Random" then
                     if CalculateChance(Settings.HeadHitChance) then
